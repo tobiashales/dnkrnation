@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<center>
+<div class="header">
+<h1>DNKR NATION</h1>
+</div>
+</center>
+<center>
+<table>
+  <thead>
+    <tr>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %>
+        <br><%= blog.body %>
+
+        
+        <br><%= link_to 'Edit', edit_blog_path(blog) %>
+        <br><%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+</center>
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>
